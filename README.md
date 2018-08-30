@@ -4,7 +4,7 @@ A simple javascript application that gives the user a way to search Github repos
 
 The project implements the [MVC design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) to make a clean cut separation of concerns. The idea is to make the solution intelligible and inviting.
 
-![Search Repositories](https://drive.google.com/file/d/1NGLP1qQm16LBIIZfj0JPYnFw5d-C3jOE/view?usp=sharing)
+![Search Repositories](https://docs.google.com/drawings/d/e/2PACX-1vStotMJROO6Mt71hZOdLKBmQ21xcgeVwn1Ud_vIcZ40sEG5EjShA_MyetIytp0YHiDELA-XuGb3uFPt/pub?w=480&h=360)
 
 ## Getting started
 
