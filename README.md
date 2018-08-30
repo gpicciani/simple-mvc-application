@@ -26,3 +26,6 @@ The project implements the [MVC design pattern](https://en.wikipedia.org/wiki/Mo
 ### Github Search API
  - [search repositories](https://developer.github.com/v3/search/#search-repositories)
  - [pagination](https://developer.github.com/v3/#pagination)
+
+ ### Run
+ `node index.js` in the project root will run express webserver.
