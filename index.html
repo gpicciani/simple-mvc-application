@@ -1,85 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="application.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
 }
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
   background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+  background-position: center;
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-#myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
-
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
-
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
-
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
-
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-}
-
-form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-}
-
-form.example button:hover {
-    background: #0b7dda;
-}
-
-form.example::after {
-    content: "";
-    clear: both;
-    display: table;
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 </style>
 </head>
 <body>
 
-<h2>My Customers</h2>
+<h2>Simple MVC application</h2>
 
 
-  <input type="text" id="myInput"  placeholder="Search for repositories.." title="Type in a Repository name">
+<div class="wrap">
+   <div class="search">
+       <input type="text" class="searchTerm" id="myInput"  placeholder="Search for repositories.." title="Type in a Repository name">
+       <button type="button" class="searchButton" onclick="searchController.getRepositories()" ><i class="fa fa-search"></i></button>
+   </div>
+</div>
 
-  <button type="button" onclick="searchController.getRepositories()" ><i class="fa fa-search"></i></button>
+<ul class="repo-list" id="repoList"></ul>
 
+<script src="application.js"></script>
 </body>
 </html>
