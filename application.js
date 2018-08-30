@@ -9,7 +9,7 @@ var config = {
 var SearchModel = function SearchModel() {};
 
 SearchModel.prototype.getRepositories = function getRepositories(searchCriteria, fn){
-  console.log('fetch repositories ' + searchCriteria);
+  
   fetch(config.SEARCH_API_REPOS + searchCriteria + config.PAGINATION_PARAMETERS).then(response => {
     response.json().then(json => {
       fn(json);
@@ -23,25 +23,22 @@ var SearchView = function SearchView(element) {
   this.element = element;
 };
 
-SearchView.prototype.createNode = function createNode(element) {
-      return document.createElement(element);
-  }
-
-SearchView.prototype.append = function append(parent, el) {
-    return parent.appendChild(el);
-  }
 
 SearchView.prototype.render = function render(jsonResponse) {
-  console.log('view search resutls ' + jsonResponse.total_count);
+  //clear from previous results
   searchView.element.innerHTML = ``;
+  //update the DOM with the first 10 results
   jsonResponse.items.map(function(item) {
       let li = document.createElement('li'),
-          h3 = document.createElement('h3')
-          span = document.createElement('span');
+          img = document.createElement('img'),
+          h3 = document.createElement('h3'),
+          p = document.createElement('span');
+      img.src = item.owner.avatar_url;
       h3.innerHTML = `${item.full_name}`;
-      span.innerHTML = `${item.description}`;
+      p.innerHTML = `${item.description}`;
+      li.appendChild(img);
       li.appendChild(h3);
-      li.appendChild(span);
+      li.appendChild(p);
       searchView.element.appendChild(li);
     })
 };

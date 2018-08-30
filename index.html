@@ -4,8 +4,40 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {
-  box-sizing: border-box;
+
+.results {
+  margin: 80px 0px;
+}
+
+ul {
+  list-style-type: none;
+  width: 500px;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  width: 100px;
+  margin: 0 15px 0 0;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #eee;
+  cursor: pointer;
 }
 
 .search {
@@ -33,9 +65,8 @@
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  right: -50px;
   width: 40px;
-  height: 36px;
+  height: 50px;
   border: 1px solid #00B4CC;
   text-align: center;
   color: #fff;
@@ -46,18 +77,16 @@
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 30%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 500px;
 }
+
+
 
 </style>
 </head>
 <body>
 
-<h2>Simple MVC application</h2>
+<h2>Simple MVC application allowing the user to search Github repositories </h2>
 
 
 <div class="wrap">
@@ -67,7 +96,7 @@
    </div>
 </div>
 
-<ul class="repo-list" id="repoList"></ul>
+<div class="results"><ul class="repo-list" id="repoList"></ul></div>
 
 <script src="application.js"></script>
 </body>
